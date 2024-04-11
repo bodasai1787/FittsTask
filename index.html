@@ -1,0 +1,106 @@
+<html>
+
+<head>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="
+  https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js
+  "></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div id='main-menu' class="mx-auto w-50 h-100 border border-secondary">
+    <img src="app_img.jpg" class="img-fluid" alt="...">
+    <h4 class="text-center mb-3">User Details</h4>
+    <div id="task-details-form">
+      <div class="radio-ip mx-5 mb-3">
+        <div id="hand-dominance mb-2">
+          <span class="me-3 fw-bold">Hand Dominance :</span>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="handDominanceRadio1" value="Dominant Hand">
+            <label class="form-check-label" for="handDominanceRadio1">Dominant Hand</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="handDominanceRadio2" value="Non Dominant Hand">
+            <label class="form-check-label" for="handDominanceRadio2">Non Dominant Hand</label>
+          </div>
+        </div>
+        <div id="pointing-device mb-2">
+          <span class="me-3 fw-bold">Pointing Device :</span>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="pointingDeviceRadio1" value="Mouse">
+            <label class="form-check-label" for="pointingDeviceRadio1">Mouse</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="pointingDeviceRadio2" value="Trackpad">
+            <label class="form-check-label" for="pointingDeviceRadio2">Trackpad</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="pointingDeviceRadio3" value="Joystick">
+            <label class="form-check-label" for="pointingDeviceRadio3">Joystick</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="pointingDeviceRadio4" value="Trackpoint">
+            <label class="form-check-label" for="pointingDeviceRadio4">Trackpoint</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="pointingDeviceRadio5" value="Other">
+            <label class="form-check-label" for="pointingDeviceRadio5">Other</label>
+          </div>
+        </div>
+        <div id="device-experience mb-2">
+          <span class="me-3 fw-bold">Device Experience :</span>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="deviceExperienceRadio1" value="option1">
+            <label class="form-check-label" for="deviceExperienceRadio1">Novice</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="deviceExperienceRadio2" value="option2">
+            <label class="form-check-label" for="deviceExperienceRadio2">Intermiediate</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="deviceExperienceRadio3" value="option2">
+            <label class="form-check-label" for="deviceExperienceRadio3">Expert</label>
+          </div>
+      </div>
+      </div>
+      <h4 class="text-center mb-3">Test Parameters</h4>
+      <div class="form-ip d-flex">
+        <div class="w-25 mb-3 mx-auto">
+          <label class="fw-bold" for="width">Amplitude</label>
+          <input type="text" class="form-control" id="amplitude" aria-describedby="basic-addon3 basic-addon4">
+        </div>
+        <div class="w-25 mb-3 mx-auto">
+          <label class="fw-bold" for="width">Width</label>
+          <input type="text" class="form-control" id="width" aria-describedby="basic-addon3 basic-addon4">
+        </div>
+        <div class="w-25 mx-auto">
+          <span class="fw-bold">Targets</label>
+          <select id='targets' class="form-select" aria-label="Default select example">
+            <option selected value="3">Three</option>
+            <option value="5">Five</option>
+            <option value="7">Seven</option>
+            <option value="9">Nine</option>
+            <option value="11">Eleven</option>
+            <option value="13">Thirteen</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="d-grid gap-2 w-50 mx-auto">
+      <button class="btn btn-primary" type="button" id="form-submit-btn">Start</button>
+    </div>
+  </div>
+  <div>
+    <canvas id="regression-chart"></canvas>
+    <canvas id="error-chart"></canvas>
+  </div>
+</body>
+
+</html>
